@@ -1,0 +1,26 @@
+<link href="https://fonts.googleapis.com/css?family=Akronim|Bowlby+One+SC|Sancreek|Srisakdi&display=swap"
+  rel="stylesheet">
+<div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <h6> posted by {{quote.description}}</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <h6> submitted by {{quote.author}} </h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <p>This quote was posted {{quote.postDate|dateCount}} .</p>
+        <app-count-input></app-count-input>
+
+      </div>
+    </div>
+
+    <button (click)='quoteDelete(true)' class="btn btn-outline-danger"><img src="https://img.icons8.com/cotton/64/000000/delete-sign--v2.png" height="30px" width="30px"/></button>
+  </div>
+
+</div>

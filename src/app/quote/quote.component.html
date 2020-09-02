@@ -1,0 +1,37 @@
+<link href="https://fonts.googleapis.com/css?family=Srisakdi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Srisakdi&display=swap" rel="stylesheet">
+
+<body>
+  <div class="container-fluid">
+
+    <div class="landing">
+      <h1 style="padding-top: 100px;">Motivational Quotes</h1>
+    </div>
+
+    <div class="row">
+
+      <div class="col md-6">
+
+        <div *ngFor='let quote of quotes ;let i = index'>
+          <div class="card">
+            <h3 appHighlight> {{quote.name}} </h3>
+            <div class="card">
+              <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComx`plete)='deleteQuote($event,i)'>
+              </app-quote-detail>
+
+
+
+            </div>
+          </div>
+          <button (click)='toggleDetails(i)' class="bg-primary text-white">View More</button>
+        </div>
+      </div>
+      <div class="col-md 6">
+        <div class="card">
+          <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
